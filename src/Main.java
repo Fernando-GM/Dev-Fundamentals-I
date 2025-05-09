@@ -3,9 +3,16 @@ import java.util.Scanner;
 // Mi Primera Clase
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Escribe tu nombre");
-        String nombre = scanner.nextLine();
-        System.out.println("Mi Nombre es: " + nombre);
+        // If-Else
+        Scanner scanner = new Scanner(System.in); // Leer significa entrada desde teclado
+        int a = scanner.nextInt(); // Número entero o sea un int
+
+        if (a < 0) {
+            System.out.println("a es negativo");
+        } else if (a == 0) {
+            System.out.println("a es igual a cero");
+        } else {
+            System.out.println("a es positivo");
+        }
     }
 }
