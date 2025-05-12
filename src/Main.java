@@ -4,22 +4,34 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-//        int n0 = 0, n1 = 1;
-//        int n2 = n0 + n1;
-//        while (n2 < 1000) {
-//            n0 = n1;
-//            n1 = n2;
-//            n2 = n0 + n1;
+//        String[] carros = {"BMW", "Jetta", "Chevy"};
+//        System.out.println(carros.length);
+//        for (int i=0; i<carros.length; i++) {
+//            int x = 5;
+//            System.out.println(carros[i]);
 //        }
-        for (int i= 0; i< 10; i++) {
-            // Codigo...
-            if (i == 4) {
-//                return; // Fin del programa en public static void main
-//                continue;
-                 break;
-            }
-            System.out.println(i);
+//        //System.out.println(x); // No se puede ocupar variable x porque esta dentro de las llaves del for
+//        System.out.println("*******************************");
+//        for (String carro: carros) {
+//            System.out.println(carro);
+//        }
+        String[] carros = {"BMW", "90", "Chevy"}; // Arreglo con valores definidos desde el inicio
+        int n = scanner.nextInt();
+        int[] numeros = new int[n]; // Arreglo sin valores definidos desde el inicio
+        for (int i=0; i<numeros.length; i++) {
+            numeros[i] = scanner.nextInt();
         }
-        System.out.println("Fin del programa");
+        if (numeros.length > 2) {
+            System.out.println(numeros[2]);
+        }
+        /*
+        Tarea 4 :
+        Leer un entero n, y despues leer n Strings. Imprimir los Strings con orden: del ultimo al primero
+        Ejemplo: tengo este arreglo String[] carros = {"BMW", "90", "Chevy"};
+        Entonces la salida es:
+        "Chevy"
+        "90"
+        "BMW"
+         */
     }
 }
