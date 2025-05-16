@@ -1,9 +1,27 @@
 import java.util.Scanner;
 
 public class MiClaseCinco {
+    public static void imprimir(int[][] matrix) {
+        for(int[] row: matrix) {
+            for(int num: row) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        int[][] matriz1 = new int[1][2];
+        matriz1[0][0] = 2;
+        matriz1[0][1] = 2;
+        imprimir(matriz1);
+        matriz1 = new int[2][1];
+//        matriz1[0][0] = 3;
+        matriz1[1][0] = 3;
+        System.out.println("***********************");
+        imprimir(matriz1);
         // Arreglo unidimensional
 //        int[] arreglo = {4 , 5 , 8};
 //        int[] arreglo2 = new int[3];
