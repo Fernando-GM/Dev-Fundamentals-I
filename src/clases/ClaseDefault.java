@@ -1,7 +1,7 @@
 package clases;
 
 /**
- * Una Clase principal solo puede definirse como public o sin modificador de acceso.
+ * Una Clase principal (Externa) solo puede definirse como public o sin modificador de acceso.
  * Una Clase sin modificador de acceso solo puede usarse por otras clases dentro del mismo paquete.
  * @see separado.Main
  */

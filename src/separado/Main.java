@@ -12,6 +12,7 @@ import clases.ClasePublica;
 public class Main {
     public static void main(String[] args) {
         ClasePublica publica = new ClasePublica();
+        System.out.println(publica.publico); // Paquete diferente, solo tengo acceso a public
 //        ClaseDefault porDefecto = new ClaseDefault();
         Subclase subclase = new Subclase();
     }

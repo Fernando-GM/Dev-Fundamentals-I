@@ -14,7 +14,7 @@ public class ClaseEstatica {
     public int normal = 10;
 
     // CONSTANTES SE ESCRIBEN CON 'final' Y MAYUSCULAS separadas por guion bajo '_'
-    public final String TAG = "ClaseEstatica";
+    public static final String TAG = "ClaseEstatica";
     protected static final int NUM_DE_CLASE = 8;
 
     /**
@@ -22,7 +22,7 @@ public class ClaseEstatica {
      * Pueden considerarse como "variables globales" de la Clase
      */
     ClaseEstatica() {
-        aumentarContador();
+//        aumentarContador();
     }
 
     /**

@@ -1,22 +1,33 @@
 package clases;
 
 public class ClasePublica {
-    // Protección de menos a más
+    // Protección de menos a más CON MODIFICADORES DE ACCESO
     public String publico = "public";
-    protected String protegido = "protected";
-    String porDefecto = "default";
+    protected String protegido = "protected"; // Seguridad nivel paquete y subclases
+    String porDefecto = "default"; // Seguridad nivel paquete
     private String privado = "private";
 
     /**
      * Los Constructores tambien pueden llevar modificadores de acceso
      */
-    public ClasePublica(){}
+    public ClasePublica(){
+        // LLamar un Constructor diferente dentro de otro Constructor
+        // Si hacemos esto, SIEMPRE A FUERZAS DEBE SER LA PRIMERA LINEA DEL CONSTRUCTOR
+        this(2, 3, 4);
+
+//        this.publico = "";
+        // Propiedades privadas se pueden acceder a nivel clase, o sea solo dentro de la definicion de la clase
+//        this.privado = "privado";
+//        System.out.println("Estoy en un constructor publico");
+    }
 
     /**
      * Con comentarios de javadoc podemos documentar la funcionalidad de los parametros de metodos y constructores
      * @param x entero que no hace nada
      */
-    protected ClasePublica(int x){}
+    protected ClasePublica(int x){
+        System.out.println("Estoy en un constructor protected");
+    }
 
     /**
      * Constructor con dos parametros y sin modificador de acceso
@@ -34,10 +45,10 @@ public class ClasePublica {
      * Un metodo publico puede ser llamado desde cualquier parte del código
      */
     public void metodoPublico() {
-        System.out.println(publico);
-        System.out.println(protegido);
-        System.out.println(porDefecto);
-        System.out.println(privado);
+//        System.out.println(publico);
+//        System.out.println(protegido);
+//        System.out.println(porDefecto);
+//        System.out.println(privado);
 
         // Podemos llamar metodos y propiedades privadas dentro de la clase
         metodoPrivado();
@@ -68,6 +79,7 @@ public class ClasePublica {
      * Un metodo privado solo puede usarse dentro de la definición de la propia clase
      */
     private void metodoPrivado() {
+        System.out.println("Metodo privado");
         System.out.println(publico);
         System.out.println(protegido);
         System.out.println(porDefecto);

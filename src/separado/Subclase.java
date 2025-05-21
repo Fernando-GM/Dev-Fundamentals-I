@@ -14,6 +14,7 @@ public class Subclase extends ClasePublica {
      */
     public void accederProtected() {
         System.out.println(this.protegido);
+//        System.out.println(this.porDefecto); // Esto da error porque dentro de las subclases solo tenemos acceso a public y protected
         this.metodoProtegido();
     }
 }
