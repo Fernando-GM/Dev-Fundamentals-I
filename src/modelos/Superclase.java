@@ -12,17 +12,17 @@ public class Superclase {
         // usamos this. para acceder a las propiedades de esta Clase
         this.valor = valor;
     }
-
-    /**
-     * Constructor sin parámetros
-     * Si la clase padre no tiene un Constructor definido sin parámetros
-     * la clase hija debe llamar en todos sus Constructores
-     * cualquier Constructor de la clase padre a fuerzas
-     * @see Subclase Constructor de Subclase
-     */
-    protected Superclase(){
-        this.valor = "hola";
-    }
+//
+//    /**
+//     * Constructor sin parámetros
+//     * Si la clase padre no tiene un Constructor definido sin parámetros
+//     * la clase hija debe llamar en todos sus Constructores
+//     * cualquier Constructor de la clase padre a fuerzas
+//     * @see Subclase Constructor de Subclase
+//     */
+//    protected Superclase() {
+//        this.valor = "hola";
+//    }
 
     /**
      * Constructor extra con dos parámetros
@@ -33,16 +33,21 @@ public class Superclase {
      * Las clase hijas no tienen acceso a las cosas privadas
      * Si se va a usar herencia, el único constructor no puede ser private porque la clase hija tiene que llamarlo.
      */
-//    private Superclase() {
-//        // Recordatorio que se puede llamar un constructor dentro de otro usando this
-//        this("Constructor privado");
-//    }
+    private Superclase() {
+        // Recordatorio que se puede llamar un constructor dentro de otro usando this
+        this("Constructor privado");
+    }
 
     /**
      * Metodo de la Clase Padre
      */
     protected void metodoPadre() {
         System.out.println("Metodo de la Clase Padre");
+        this.funcionPrivada();
+    }
+
+    private void funcionPrivada() {
+        System.out.println("Estoy en un privado");
     }
 
     /**
@@ -66,6 +71,11 @@ public class Superclase {
      */
     protected void mensaje() {
         System.out.println("Hello World!");
+    }
+
+    protected int otroMetodo(String cosa, String coso) {
+        System.out.println("");
+        return 1;
     }
 
     /**

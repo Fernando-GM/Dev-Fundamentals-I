@@ -10,11 +10,11 @@ package modelos;
  * Por eso de preferencia SIEMPRE usar super() para llamar cualquier Constructor cuando estamos usando Herencia en Java
  */
 public class Subclase extends Superclase {
-    String hijo;
+    public String hijo;
 
     /**
      * Constructor de la clase hija
-     * En los constructores de clases que heredan, podemos llamar constructores de la clase padre
+     * En los constructores de clases que heredando, podemos llamar constructores de la clase padre
      * usando super(), muy parecido a cuando usabamos this().
      * Y usar super() para llamar un 'constructor del padre' es obligatorio si la clase padre
      * no tiene definido un Constructor sin parámetros
@@ -23,27 +23,29 @@ public class Subclase extends Superclase {
     protected Subclase(String valor) {
         // Llamar constructor del padre siempre en la primera linea con super()
         super(valor);
-        // Podemos usar this. para acceder a los parámetros y métodos heredados u omitir el this.
-        // Tambien podemos usar super.
-        this.valor = "Subclase";
-        valor = "Sin this.";
-        super.valor = "Propiedad heredada";
-        this.metodoPadre();
-        metodoPadre();
-        super.metodoPadre();
-
-        // Podemos acceder a propiedades y metodos estaticos heredados sin el this.
-        contadorPadre++;
-        metodoEstaticoPadre();
-
-        // Tambien tenemos acceso a las clases internas
-        Inner inner = this.new Inner();
-        inner.inner = "clase interna del padre";
-        InnerStatic.innerStatic = "Clase interna estatica del padre";
-
-        // Las clases hijas pueden definir propiedades y metodos propios, accedemos con ellos como siempre
-        hijo = "Propiedad solo del hijo";
-        this.hijo = "";
+//        super.mensaje();
+//        super.metodoPadre();
+//        // Podemos usar this. para acceder a los parámetros y métodos heredados u omitir el this.
+//        // Tambien podemos usar super.
+//        this.valor = "Subclase";
+//        valor = "Sin this.";
+//        super.valor = "Propiedad heredada";
+//        this.metodoPadre();
+//        metodoPadre();
+//        super.metodoPadre();
+//
+//        // Podemos acceder a propiedades y metodos estaticos heredados sin el this.
+//        contadorPadre++;
+//        metodoEstaticoPadre();
+//
+//        // Tambien tenemos acceso a las clases internas
+//        Inner inner = this.new Inner();
+//        inner.inner = "clase interna del padre";
+//        InnerStatic.innerStatic = "Clase interna estatica del padre";
+//
+//        // Las clases hijas pueden definir propiedades y metodos propios, accedemos con ellos como siempre
+//        hijo = "Propiedad solo del hijo";
+//        this.hijo = "";
     }
 
     /**
@@ -54,6 +56,12 @@ public class Subclase extends Superclase {
         System.out.println("¡Hola Mundo!");
         // No es obligatorio, pero con super. podemos usar la implementación original y el orden no importa
 //        super.mensaje();
+    }
+
+    @Override
+    protected int otroMetodo(String cosa, String coso) {
+//        return super.otroMetodo(cosa, coso);
+        return 1;
     }
 
     /**
@@ -67,5 +75,10 @@ public class Subclase extends Superclase {
         this.mensaje();
         // super. para el metodo en la clase padre
         super.mensaje();
+    }
+
+    @Override
+    public String toString() {
+        return "Clase Subclase con valor = " + valor;
     }
 }
