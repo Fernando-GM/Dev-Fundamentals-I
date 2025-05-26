@@ -33,10 +33,12 @@ public interface Interfaz {
      */
     default void metodoDefault() {
         System.out.println("Metodo normal, public aunque se omita");
+        metodoPrivado();
     }
 
     private void metodoPrivado() {
         System.out.println("Sin default, solo se puede usar en este archivo como todo lo que es private");
+//        metodoDefault();
     }
 
     static void otro() {

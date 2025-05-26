@@ -10,13 +10,13 @@ public abstract class Abstracta {
     protected String valor3;
     private String valor4;
 
-    public Abstracta(){}
+//    public Abstracta(){}
 
-    protected Abstracta(int x){}
-
-    private Abstracta(int x, int y){}
-
-    Abstracta(int x, int y, int z){}
+//    protected Abstracta(int x){}
+//
+//    private Abstracta(int x, int y){}
+//
+//    Abstracta(int x, int y, int z){}
 
     void metodoNormal(){
         System.out.println("Metodo normal");
