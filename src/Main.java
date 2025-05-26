@@ -1,25 +1,30 @@
 import java.util.Scanner;
 
-// Mi Primera Clase
 public class Main {
+    /**
+     * Leer un entero n, y despues leer n Strings (guardar en un Arreglo).
+     * Imprimir los Strings con orden: del último al primero.
+     * Ejemplo: tengo este arreglo String[] carros = {"BMW", "90", "Chevy"};
+     * Entonces la salida en consola será:
+     * "Chevy"
+     * "90"
+     * "BMW"
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-//        int n0 = 0, n1 = 1;
-//        int n2 = n0 + n1;
-//        while (n2 < 1000) {
-//            n0 = n1;
-//            n1 = n2;
-//            n2 = n0 + n1;
-//        }
-        for (int i= 0; i< 10; i++) {
-            // Codigo...
-            if (i == 4) {
-//                return; // Fin del programa en public static void main
-//                continue;
-                 break;
-            }
-            System.out.println(i);
+        int n = scanner.nextInt(); // Leer n
+        String[] arreglo = new String[n]; // Definir un arreglo de tamaño n
+        /**
+         * Después de usar un scanner.nextInt() y antes de un scanner.nextLine()
+         * Ponemos un scanenr.nextLine() extra para que consuma el "enter" que nosotros metemos en consola cuando escribimos un numero
+         */
+        scanner.nextLine(); // Consumir salto de línea después de leer un número y antes de leer cadenas
+        for (int i = 0; i < n; i++) {
+            arreglo[i] = scanner.nextLine(); // Leer n cadenas
         }
-        System.out.println("Fin del programa");
+        // Recorrer arreglo de fin a inicio para imprimir al revés
+        for (int i = n - 1; i >= 0; i--) {
+            System.out.println(arreglo[i]);
+        }
     }
 }
