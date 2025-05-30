@@ -1,3 +1,5 @@
+package main;
+
 import java.util.Scanner;
 
 // Mi Primera Clase
@@ -21,5 +23,9 @@ public class Main {
             System.out.println(i);
         }
         System.out.println("Fin del programa");
+    }
+
+    public int add (int x, int y) {
+        return x + y;
     }
 }
