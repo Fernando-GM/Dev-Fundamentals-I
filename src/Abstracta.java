@@ -18,7 +18,7 @@ public abstract class Abstracta {
 //
 //    Abstracta(int x, int y, int z){}
 
-    void metodoNormal(){
+    public void metodoNormal(){
         System.out.println("Metodo normal");
     }
 
