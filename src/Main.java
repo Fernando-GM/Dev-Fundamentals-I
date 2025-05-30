@@ -1,25 +1,37 @@
-import java.util.Scanner;
+import java.util.Arrays;
 
-// Mi Primera Clase
+// TODO: esto es un comentario TODO para marcar algo del código a hacer o completar en el futuro
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-//        int n0 = 0, n1 = 1;
-//        int n2 = n0 + n1;
-//        while (n2 < 1000) {
-//            n0 = n1;
-//            n1 = n2;
-//            n2 = n0 + n1;
-//        }
-        for (int i= 0; i< 10; i++) {
-            // Codigo...
-            if (i == 4) {
-//                return; // Fin del programa en public static void main
-//                continue;
-                 break;
+        ClaseNormal objetito = new ClaseNormal();
+//        objetito.metodoAbstracto();
+//        objetito.metodoNormal();
+//        objetito.valor1 = "";
+//
+//        objetito.metodoAbstractoDeInterfaz();
+//        objetito.nuevoMetodo();
+//        objetito.metodoDefault();
+
+        Enumeracion enumeracion = Enumeracion.valueOf("ULTIMO");
+
+        switch (enumeracion) {
+            case VALOR: {
+                System.out.println("Valor");
+                break;
             }
-            System.out.println(i);
+            case OTRO: {
+                System.out.println("Otro");
+                break;
+            }
+            case ULTIMO: {
+                System.out.println("Ultimo");
+                break;
+            }
+            default:
+                System.out.println("Valor no valido");
         }
-        System.out.println("Fin del programa");
+
+        System.out.println(Arrays.toString(Enumeracion.values()));
+        System.out.println(enumeracion.ordinal());
     }
 }
