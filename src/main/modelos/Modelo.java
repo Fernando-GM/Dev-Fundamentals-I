@@ -14,6 +14,11 @@ public class Modelo {
         return true;
     }
 
+    public String concatenarPuntoYComa(String cadena) {
+        return cadena + ";";
+    }
+
+    // No lo recomiendo pero es para probar cosas privadas
     @Nested
     public class InnerTests {
         @Test
