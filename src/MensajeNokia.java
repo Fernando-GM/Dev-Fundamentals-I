@@ -11,6 +11,11 @@ import java.util.Scanner;
  */
 public class MensajeNokia {
     public static void main(String[] args) {
+//        miercoles();
+        jueves();
+    }
+
+    private static void miercoles() {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine(); // Leer entrada
         String[] characters = input.split("-"); // Dividir entrada en conjunto de numeros por guiones
@@ -38,6 +43,46 @@ public class MensajeNokia {
             {'p', 'q', 'r', 's'},   //7
             {'t', 'u', 'v'},        //8
             {'w', 'x', 'y', 'z'}    //9
+    };
+
+    private static void jueves() {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine(); // Leer entrada
+        String output = ""; // Declarar salida
+        for (int i = 0; i < input.length(); i++) { // Recorrer cadena caracter por caracter
+            char character = input.charAt(i); // Obtener caracter
+            if (character == ' ') { // Si es espacio, agregar automaticamente "0-" y continuar el ciclo
+                output = output.concat("0-"); // Un espacio nunca va al final
+                continue;
+            }
+//            output = switch (character) {
+//                case 'a' -> output.concat("2");
+//                case 'b' -> output.concat("22");
+//                case 'c' -> output.concat("222");
+//                case 'd' -> output.concat("3");
+//                case 'e' -> output.concat("33");
+//                case 'f' -> output.concat("333");
+//                default -> output.concat("0");
+//            };
+            int valorLetra = (int) character - 'a'; // Calcular indice del valor de la letra, podemos restar 'a' ya que en terminos de int está tomando la posicion de la tabla ASCII
+            output = output.concat(REVERSE_KEYBOARD[valorLetra]);
+            if (i < input.length() - 1) output = output.concat("-"); // Si estoy en la ultima letra, no agregues guion corto
+        }
+        System.out.println(output);
+    }
+
+    // Arreglo de strings que corresponde a un teclado de un celular antiguo como Nokia pero al reves
+    // Los indices corresponden al valor numerico de cada letra del abecedario: i = (int)'a' - 'a'
+    // Los elementos corresponden al número de presiones a cada boton para cada letra del abecedario
+    private static final String[] REVERSE_KEYBOARD = {
+            "2", "22", "222",
+            "3", "33", "333",
+            "4", "44", "444",
+            "5", "55", "555",
+            "6", "66", "666",
+            "7", "77", "777", "7777",
+            "8", "88", "888",
+            "9", "99", "999", "9999"
     };
 }
 
